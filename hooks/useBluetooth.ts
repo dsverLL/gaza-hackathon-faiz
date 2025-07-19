@@ -3,7 +3,7 @@ import { BleManager, Device } from 'react-native-ble-plx';
 import { Buffer } from 'buffer';
 
 export function useBluetooth() {
-  const managerRef = useRef<BleManager>();
+  const managerRef = useRef<BleManager | null>(null);
   const [devices, setDevices] = useState<Device[]>([]);
   const [connectedDevice, setConnectedDevice] = useState<Device | null>(null);
   const [isScanning, setIsScanning] = useState(false);
